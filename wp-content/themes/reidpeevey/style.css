@@ -139,7 +139,7 @@ button.subnav:hover {background-color: var(--r-teal); color: #fff; cursor: point
 .frontFaded:is(.frontFade-from-below) { transform: translateY(75px); }
 
 /* HEADINGS */
-h1.main1 {font-size: 2.5rem; margin: 0; padding: 0; line-height: 3rem; font-weight: 600;}
+h1.main1, h2.main1, h2.main1 {font-size: 2.5rem; margin: 0; padding: 0; line-height: 3rem; font-weight: 600;}
 h2.main2 {font-weight: 400; font-size: 2.5rem; margin: 0; padding: 0; line-height: 3rem;}
 
 h3.subtitle1 { font-size: 1.4rem; margin: 0; padding: 0; line-height: 2rem; font-weight: 600;}
@@ -364,7 +364,7 @@ ul.list1 li {margin: 20px 0; padding-left: 0px; text-indent: -20px;}
 		.mobilenav {display: none;}	
 		.fp-mobilenav {display: none;}	
 		
-		h1.main1 {font-size: 2.5rem; line-height: 3rem;}
+		h1.main1, h2.main1, h2.main1 {font-size: 2.5rem; line-height: 3rem;}
 		h2.main2 {font-size: 2.5rem; line-height: 3rem;}
 		
 		.topnavLeft {width: 90%; margin: 0px auto 10px auto;}
@@ -378,7 +378,7 @@ ul.list1 li {margin: 20px 0; padding-left: 0px; text-indent: -20px;}
 		.mobilenav {display: none;}	
 		.fp-mobilenav {display: none;}	
 		
-		h1.main1 {font-size: 2.5rem; line-height: 3rem;}
+		h1.main1, h2.main1, h2.main1 {font-size: 2.5rem; line-height: 3rem;}
 		h2.main2 {font-size: 2.5rem; line-height: 3rem;}
 		
 		.topnavLeft {width: 90%; margin: 0px auto 10px auto;}
@@ -398,7 +398,7 @@ ul.list1 li {margin: 20px 0; padding-left: 0px; text-indent: -20px;}
 		
 		@media screen and (min-width: 768px) and (max-width: 1023px) {
 			
-			h1.main1 {font-size: 1.6rem; line-height: 2rem;}
+			h1.main1, h2.main1, h2.main1 {font-size: 1.6rem; line-height: 2rem;}
 			h2.main2 {font-size: 1.4rem; line-height: 1.8rem;}
 		
 			.headerWrapper {align-items: start;}
@@ -444,7 +444,7 @@ ul.list1 li {margin: 20px 0; padding-left: 0px; text-indent: -20px;}
 		
 		@media screen and (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
 		
-			h1.main1 {font-size: 1.6rem; line-height: 2rem;}
+			h1.main1, h2.main1, h2.main1 {font-size: 1.6rem; line-height: 2rem;}
 			h2.main2 {font-size: 1.4rem; line-height: 1.8rem;}
 		
 			.headerWrapper {align-items: start;}
@@ -495,7 +495,7 @@ ul.list1 li {margin: 20px 0; padding-left: 0px; text-indent: -20px;}
 		button.buttonLogin {font-family: 'GeneralSans', trebuchet ms, arial, verdana, sans-serif; font-size: .6rem; text-transform: uppercase; padding: 6px 14px; background: var(--r-green); color: #fff; border: 0px; letter-spacing: 0px;}
 		button.buttonLogin:hover {background-color: var(--black); color: #fff; cursor: pointer;}
 		
-		h1.main1 {font-size: 1.5rem; line-height: 2rem;}
+		h1.main1, h2.main1, h2.main1 {font-size: 1.5rem; line-height: 2rem;}
 		h2.main2 {font-size: 1.5rem; line-height: 2rem;}
 	
 		.headerContainer-Logo {width: 60%; margin: 0 auto;}
@@ -560,7 +560,7 @@ ul.list1 li {margin: 20px 0; padding-left: 0px; text-indent: -20px;}
 		button.buttonLogin {font-family: 'GeneralSans', trebuchet ms, arial, verdana, sans-serif; font-size: .6rem; text-transform: uppercase; padding: 6px 14px; background: var(--r-green); color: #fff; border: 0px; letter-spacing: 0px;}
 		button.buttonLogin:hover {background-color: var(--black); color: #fff; cursor: pointer;}
 		
-		h1.main1 {font-size: 1.5rem; line-height: 2rem;}
+		h1.main1, h2.main1, h2.main1 {font-size: 1.5rem; line-height: 2rem;}
 		h2.main2 {font-size: 1.5rem; line-height: 2rem;}
 	
 		.sect1Container {width: 90%; max-width: 1400px; position: absolute; top: 50%; left: 50%; transform:translate(-50%,-50%); padding: 50px 50px; text-align: center;}
