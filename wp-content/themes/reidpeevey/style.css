@@ -630,3 +630,60 @@ ul.list1 li {margin: 20px 0; padding-left: 0px; text-indent: -20px;}
 	.fp-mobilenav {display: none;}	
 	
 }
+
+/* ===== PHASE 3 LEAD CAPTURE (2026-08-26) ===== */
+/* Forms reuse the theme's existing look: .formInput1 borders, .buttonSolutions
+   maroon fill. Nothing new visually, just laid out. */
+
+.rpFormIntro {font-size: 1.1rem; margin: 0 0 30px 0;}
+
+.rpForm {display: grid; grid-template-columns: 1fr 1fr; grid-column-gap: 40px; grid-row-gap: 24px; max-width: 820px;}
+.rpForm .rpField {display: flex; flex-direction: column;}
+.rpForm .rpFieldWide {grid-column: 1 / -1;}
+.rpForm label {font-size: .8rem; text-transform: uppercase; letter-spacing: .5px; color: var(--r-dkblue); margin: 0 0 8px 0; line-height: 20px;}
+.rpForm input.formInput1, .rpForm select, .rpForm textarea {width: 100%; box-sizing: border-box; font-family: inherit; font-size: 1.1rem; line-height: 26px; color: var(--r-black); background-color: #fff; border: 1px solid var(--r-dkblue); padding: 10px 20px;}
+.rpForm textarea {min-height: 150px; resize: vertical;}
+.rpForm input.formInput1:focus, .rpForm select:focus, .rpForm textarea:focus {outline: 2px solid var(--r-red); outline-offset: -2px;}
+.rpForm button.buttonSolutions {justify-self: start;}
+.rpForm button.buttonSolutions[disabled] {opacity: .55;}
+.rpForm button.buttonSolutions[disabled]:hover {background: var(--r-red); cursor: default;}
+.rpFormStatus {grid-column: 1 / -1; display: none; font-size: 1rem; line-height: 26px; padding: 4px 0;}
+.rpFormStatus.isVisible {display: block;}
+.rpFormStatus.isOk {color: var(--r-dkblue); font-weight: 600;}
+.rpFormStatus.isError {color: var(--r-red); font-weight: 600;}
+
+/* The honeypot. A visitor never sees it, so anything typed in it is a bot. */
+.rpPot {position: absolute; left: -9999px; top: -9999px; width: 1px; height: 1px; overflow: hidden;}
+
+/* Compact inquiry block that sits under the main content of a listing-ish page. */
+.rpInquiry {width: 80%; margin: 80px auto 100px auto; border-top: 4px solid var(--r-red); padding: 40px 0 0 0;}
+.rpInquiry h2 {font-family: 'GeneralSans', trebuchet ms, arial, verdana, sans-serif; font-size: 1.6rem; font-weight: 600; color: var(--r-dkblue); margin: 0 0 10px 0;}
+.rpInquiry .rpFormIntro {margin: 0 0 30px 0;}
+.rpInquiry .rpForm {max-width: 820px;}
+
+/* Footer newsletter block. The footer grid gains a fourth column for it; the
+   empty .footerSocial cell collapses to nothing beside it. */
+.rpNews {padding: 0 30px;}
+.rpNews h3 {margin: 0 0 10px 0;}
+.rpNews label {display: block; font-size: .8rem; text-transform: uppercase; letter-spacing: .5px; color: #CCC; line-height: 20px;}
+.rpNews .rpNewsForm {display: grid; grid-template-columns: 1fr; grid-row-gap: 12px; max-width: 320px;}
+.rpNews input.formInput1 {width: 100%; box-sizing: border-box; font-size: 1rem; line-height: 24px; padding: 8px 14px; border: 1px solid var(--midgray); background-color: #fff; color: var(--r-black);}
+.rpNews button.buttonSolutions {justify-self: start;}
+.rpNews button.buttonSolutions[disabled] {opacity: .55;}
+.rpNews .rpFormStatus {font-size: .9rem; line-height: 22px;}
+.rpNews .rpFormStatus.isOk {color: #fff;}
+.rpNews .rpFormStatus.isError {color: #F0B8B8;}
+
+@media screen and (min-width: 1024px) {
+	.footerContainer {grid-template-columns: 2.2fr 1.4fr auto 1fr;}
+}
+
+@media screen and (max-width: 1023px) {
+	.rpNews {grid-column: 1 / -1; padding: 0;}
+}
+
+@media screen and (max-width: 767px) {
+	.rpInquiry {width: 88%;}
+	.rpForm {grid-template-columns: 1fr; grid-row-gap: 20px;}
+	.rpInquiry {margin: 50px auto 70px auto;}
+}

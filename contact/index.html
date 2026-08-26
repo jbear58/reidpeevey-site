@@ -218,6 +218,45 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 	<div class="separatorBlue"></div>
 	<div class="content">
 <p class="wp-block-paragraph">Give us a call today at (254) 752-9500.</p>
+<p class="wp-block-paragraph">Prefer to write? Tell us what you are looking for and we will take it from there.</p>
+
+<form class="rpForm" id="rpContactForm" data-rp-form="inquiry" data-form="contact" data-page="/contact/" data-agent="" action="https://script.google.com/macros/s/AKfycbwefNTHsscVv5maqtIXBei9P1T9fg7EuUNx2_rt21gJvUSNaofIuNxiCSpd_NTRjvUz/exec" method="post">
+	<input type="hidden" name="token" value="58c93cef07c041e3e8c33b9e593650ae7647993476dedf6d" />
+	<input type="hidden" name="action" value="inquiry" />
+	<div class="rpPot"><label for="rpContactWebsite">Website</label><input type="text" id="rpContactWebsite" name="website" tabindex="-1" autocomplete="off" /></div>
+	<div class="rpField">
+		<label for="rpContactName">Name</label>
+		<input class="formInput1" type="text" id="rpContactName" name="name" autocomplete="name" required />
+	</div>
+	<div class="rpField">
+		<label for="rpContactEmail">Email</label>
+		<input class="formInput1" type="email" id="rpContactEmail" name="email" autocomplete="email" required />
+	</div>
+	<div class="rpField">
+		<label for="rpContactPhone">Phone</label>
+		<input class="formInput1" type="tel" id="rpContactPhone" name="phone" autocomplete="tel" />
+	</div>
+	<div class="rpField">
+		<label for="rpContactCompany">Company</label>
+		<input class="formInput1" type="text" id="rpContactCompany" name="company" autocomplete="organization" />
+	</div>
+	<div class="rpField rpFieldWide">
+		<label for="rpContactInterest">I am interested in</label>
+		<select id="rpContactInterest" name="interest">
+			<option value="Leasing space">Leasing space</option>
+			<option value="Buying">Buying</option>
+			<option value="Selling">Selling</option>
+			<option value="Property management">Property management</option>
+			<option value="Other">Other</option>
+		</select>
+	</div>
+	<div class="rpField rpFieldWide">
+		<label for="rpContactMessage">Message</label>
+		<textarea id="rpContactMessage" name="message" maxlength="3000" required></textarea>
+	</div>
+	<button class="buttonSolutions rpFieldWide" type="submit">Send</button>
+	<div class="rpFormStatus" role="status" aria-live="polite"></div>
+</form>
 </div>
 
 
