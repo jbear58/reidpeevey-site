@@ -116,6 +116,10 @@
 		clearSay(form);
 
 		var data = payloadFrom(form);
+		// One id per submit attempt. It rides along on BOTH the fetch and the iframe
+		// fallback, so if the fallback re-posts a submission the server already
+		// saved, the server recognizes it and does not save it twice.
+		data.sid = Date.now().toString(36) + Math.random().toString(36).slice(2, 12);
 		var isSubscribe = data.action === 'subscribe';
 		var formId = form.getAttribute('id') || form.getAttribute('data-form') || data.action;
 
