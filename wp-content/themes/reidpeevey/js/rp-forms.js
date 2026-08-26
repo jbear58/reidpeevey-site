@@ -77,6 +77,10 @@
 			if (f.type === 'submit' || f.type === 'button') continue;
 			data[f.name] = f.value;
 		}
+		// The hidden page/agent inputs exist for the no-JS POST. With JS running the
+		// live URL is better (it carries the query string and any UTM tags).
+		data.page = window.location.href;
+		data.agent = form.getAttribute('data-agent') || data.agent || '';
 		return data;
 	}
 
@@ -141,8 +145,12 @@
 		}
 
 		if (typeof window.fetch !== 'function') {
-			iframeFallback(form, data);
-			succeed();
+			try {
+				iframeFallback(form, data);
+				succeed();
+			} catch (e) {
+				failWith(ERR_TEXT);
+			}
 			return;
 		}
 

@@ -8,14 +8,17 @@
  *
  * Events:
  *   tel_click     - any tel: link
- *   pdf_download  - any .pdf link (flyers, IABS, consumer notice)
- *   listing_click - a click inside the Buildout inventory embed
+ *   pdf_download  - any .pdf link on OUR pages (today: the two TREC notices in
+ *                   the footer). Listing flyers live inside the Buildout iframe,
+ *                   which is cross-origin: clicks in there never reach this
+ *                   document, so they cannot be tracked from here. Phase 5's
+ *                   own listing pages will carry flyer links this CAN see.
  * form_submit and newsletter_signup are fired by rp-forms.js instead, where the
  * endpoint's answer is known - a click listener here would count attempts, not
  * leads.
  *
- * One delegated listener on document, capture phase off, passive. Nothing here
- * may ever block or swallow a navigation.
+ * One delegated bubbling listener on document. Nothing here may ever block or
+ * swallow a navigation.
  */
 (function () {
 	'use strict';
@@ -32,14 +35,6 @@
 			node = node.parentNode;
 		}
 		return null;
-	}
-
-	function inBuildout(node) {
-		while (node && node !== document) {
-			if (node.id === 'buildout') return true;
-			node = node.parentNode;
-		}
-		return false;
 	}
 
 	function fileName(href) {
@@ -60,11 +55,6 @@
 		}
 		if (/\.pdf(\?|#|$)/i.test(href)) {
 			track('pdf_download', { file: fileName(href), link_url: href, page_path: path });
-			return;
-		}
-		if (inBuildout(a)) {
-			track('listing_click', { link_url: href, link_text: (a.textContent || '').trim().slice(0, 100),
-			                         page_path: path });
 		}
 	}
 

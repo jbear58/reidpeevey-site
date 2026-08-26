@@ -647,8 +647,8 @@ ul.list1 li {margin: 20px 0; padding-left: 0px; text-indent: -20px;}
 .rpForm button.buttonSolutions {justify-self: start;}
 .rpForm button.buttonSolutions[disabled] {opacity: .55;}
 .rpForm button.buttonSolutions[disabled]:hover {background: var(--r-red); cursor: default;}
-.rpFormStatus {grid-column: 1 / -1; display: none; font-size: 1rem; line-height: 26px; padding: 4px 0;}
-.rpFormStatus.isVisible {display: block;}
+.rpFormStatus {grid-column: 1 / -1; display: block; min-height: 0; font-size: 1rem; line-height: 26px; padding: 0;}
+.rpFormStatus.isVisible {padding: 4px 0;}
 .rpFormStatus.isOk {color: var(--r-dkblue); font-weight: 600;}
 .rpFormStatus.isError {color: var(--r-red); font-weight: 600;}
 
@@ -679,7 +679,16 @@ ul.list1 li {margin: 20px 0; padding-left: 0px; text-indent: -20px;}
 }
 
 @media screen and (max-width: 1023px) {
-	.rpNews {grid-column: 1 / -1; padding: 0;}
+	.rpNews {grid-column: 1 / -1; grid-row: 2; padding: 0;}
+}
+
+/* Tablet band: the theme's 3-column footer stays as it was (about / social /
+   contact on row 1, contact flush right); the newsletter takes its own row. */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+	.footerContainer > div:first-child {grid-column: 1; grid-row: 1;}
+	.footerSocial {grid-column: 2; grid-row: 1;}
+	.footerContact {grid-column: 3; grid-row: 1;}
+	.rpNews {margin-top: 40px;}
 }
 
 @media screen and (max-width: 767px) {
