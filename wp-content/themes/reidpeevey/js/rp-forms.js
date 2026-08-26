@@ -147,9 +147,14 @@
 			headers: { 'Content-Type': 'text/plain;charset=utf-8' },
 			body: JSON.stringify(data)
 		}).then(function (res) {
+			// A real HTTP error (a 403 before the script is authorized, a 500 inside
+			// it) is NOT a transport problem, so it must not fall through to the
+			// iframe path and show a thank-you for a lead that was never saved.
+			if (!res.ok) { return { httpError: res.status }; }
 			return res.json();
 		}).then(function (out) {
-			if (out && out.ok) { succeed(); }
+			if (out && out.httpError) { failWith(ERR_TEXT); }
+			else if (out && out.ok) { succeed(); }
 			else { failWith(userMessage(out && out.error)); }
 		}).catch(function () {
 			// Network, CORS or a parse failure. Post it the old way rather than lose it.
