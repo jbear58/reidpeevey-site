@@ -696,3 +696,56 @@ ul.list1 li {margin: 20px 0; padding-left: 0px; text-indent: -20px;}
 	.rpForm {grid-template-columns: 1fr; grid-row-gap: 20px;}
 	.rpInquiry {margin: 50px auto 70px auto;}
 }
+
+/* ===== PHASE 4 RANKING PAGES (2026-08-26) ===== */
+/* Lane cards, the pill link row, the FAQ block and the transaction-proof list.
+   Everything reuses the theme's own variables. The one new colour is the card
+   hairline, which the palette had no equivalent for. */
+
+.rpLaneWrapper {width: 80%; margin: 0 auto 80px auto;}
+.rpLaneWrapper > h2, .rpLinks > h2, .rpFaq > h2 {font-family: 'GeneralSans', trebuchet ms, arial, verdana, sans-serif; font-size: 1.6rem; font-weight: 600; color: var(--r-dkblue); margin: 0 0 24px 0;}
+.rpLaneEmpty {font-size: 1.1rem; line-height: 1.8rem; margin: 0;}
+
+/* One column by default, two from tablet, three from desktop. */
+.rpLane {display: grid; grid-template-columns: 1fr; grid-column-gap: 30px; grid-row-gap: 40px;}
+
+a.rpCard {display: block; border: 1px solid #E7E3E0; background: #fff; color: var(--r-black); text-decoration: none;}
+a.rpCard:visited {color: var(--r-black); text-decoration: none;}
+a.rpCard:hover {text-decoration: none; border-color: var(--r-red);}
+a.rpCard:focus {outline: 2px solid var(--r-red); outline-offset: 2px;}
+a.rpCard img {display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; background: #E7E3E0;}
+.rpCardBody {padding: 20px 24px 24px 24px;}
+.rpCardBody h3 {font-family: 'GeneralSans', trebuchet ms, arial, verdana, sans-serif; font-size: 1.2rem; line-height: 1.7rem; font-weight: 600; color: var(--r-dkblue); margin: 0 0 8px 0;}
+.rpCardAddr {font-size: 1rem; line-height: 1.5rem; margin: 0 0 10px 0;}
+.rpCardSpecs {font-size: .9rem; line-height: 1.4rem; text-transform: uppercase; letter-spacing: .5px; color: var(--r-ltblack); margin: 0 0 10px 0;}
+.rpCardPrice {font-size: 1.1rem; line-height: 1.6rem; font-weight: 600; color: var(--r-red); margin: 0 0 10px 0;}
+.rpCardBroker {font-size: .9rem; line-height: 1.4rem; color: var(--r-ltblack);}
+
+/* Pill row. Same shape as button.subnav, but a real link so it is crawlable. */
+.rpLinks {width: 80%; margin: 0 auto 80px auto;}
+.rpLinks p {margin: 0; display: flex; flex-wrap: wrap; gap: 12px;}
+a.rpPill {font-family: 'GeneralSans', trebuchet ms, arial, verdana, sans-serif; font-size: .8rem; text-transform: uppercase; letter-spacing: .5px; padding: 8px 20px; background: transparent; color: var(--r-teal); border: 2px solid var(--r-teal); text-decoration: none; display: inline-block;}
+a.rpPill:visited {color: var(--r-teal); text-decoration: none;}
+a.rpPill:hover {background-color: var(--r-teal); color: #fff; text-decoration: none;}
+
+.rpFaq {width: 80%; margin: 0 auto 80px auto;}
+.rpFaq h3 {font-family: 'GeneralSans', trebuchet ms, arial, verdana, sans-serif; font-size: 1.15rem; line-height: 1.7rem; font-weight: 600; color: var(--r-dkblue); margin: 24px 0 6px 0;}
+.rpFaq h3:first-of-type {margin-top: 0;}
+.rpFaq p {font-size: 1.1rem; line-height: 1.8rem; margin: 0;}
+
+/* Linked transaction-news posts, inside .content so it inherits the link colour. */
+.rpProof {margin: 40px 0 0 0;}
+.rpProof ul {margin: 0; padding: 0 0 0 22px;}
+.rpProof li {margin: 0 0 10px 0; line-height: 1.8rem;}
+
+@media screen and (min-width: 768px) {
+	.rpLane {grid-template-columns: 1fr 1fr;}
+}
+
+@media screen and (min-width: 1024px) {
+	.rpLane {grid-template-columns: 1fr 1fr 1fr;}
+}
+
+@media screen and (max-width: 767px) {
+	.rpLaneWrapper, .rpLinks, .rpFaq {width: 88%;}
+}
