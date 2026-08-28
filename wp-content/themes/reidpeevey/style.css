@@ -751,5 +751,9 @@ a.rpPill:hover {background-color: var(--r-teal); color: #fff; text-decoration: n
 }
 
 
-/* Hidden Phase 4 preview drafts only (build_page.py --preview-prefix). */
-.rpDraftBanner {background: var(--r-red); color: #fff; font-family: 'GeneralSans', trebuchet ms, arial, sans-serif; font-size: .95rem; letter-spacing: 1px; text-transform: uppercase; text-align: center; padding: 8px 12px;}
+/* Hidden Phase 4 preview drafts only (build_page.py --preview-prefix). Pinned to
+   the bottom of the viewport, not the top: .headerWrapper is position:fixed with
+   z-index 999999999, so a top bar is buried under the nav on every page. */
+.rpDraftBanner {position: fixed; left: 0; right: 0; bottom: 0; z-index: 1000000000;}
+.rpDraftBanner {background: var(--r-red); color: #fff; text-align: center; padding: 8px 12px;}
+.rpDraftBanner {font-family: 'GeneralSans', trebuchet ms, arial, sans-serif; font-size: .95rem; letter-spacing: 1px; text-transform: uppercase;}
