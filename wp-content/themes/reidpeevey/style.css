@@ -749,3 +749,7 @@ a.rpPill:hover {background-color: var(--r-teal); color: #fff; text-decoration: n
 @media screen and (max-width: 767px) {
 	.rpLaneWrapper, .rpLinks, .rpFaq {width: 88%;}
 }
+
+
+/* Hidden Phase 4 preview drafts only (build_page.py --preview-prefix). */
+.rpDraftBanner {background: var(--r-red); color: #fff; font-family: 'GeneralSans', trebuchet ms, arial, sans-serif; font-size: .95rem; letter-spacing: 1px; text-transform: uppercase; text-align: center; padding: 8px 12px;}
